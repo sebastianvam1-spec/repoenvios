@@ -8,16 +8,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FastDelivery PRO</title>
+<title>FastDelivery Ultra</title>
 
-<!-- CSS -->
-<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="estilos.css?v=10">
 
-<!-- ICONOS -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<!-- FUENTE -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet">
 
@@ -25,28 +22,7 @@ rel="stylesheet">
 
 <body>
 
-<!-- =========================
-NAVBAR
-========================= -->
-
-<nav class="navbar">
-
-<div class="logo">
-Fed<span>Ex</span>
-</div>
-
-<ul>
-<li><a href="#">Envíos</a></li>
-<li><a href="#">Rastreo</a></li>
-<li><a href="#">Ayuda</a></li>
-<li><a href="#">Cuenta</a></li>
-</ul>
-
-</nav>
-
-<!-- =========================
-HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -55,157 +31,88 @@ HERO
 <div class="hero-content">
 
 <h1>
-Conectados con el mañana
+Sistema Inteligente de Envíos
 </h1>
 
 <p>
-Gestiona envíos, rastrea paquetes y administra
-toda tu logística desde una plataforma moderna,
-rápida y profesional.
+Gestiona paquetes, controla entregas y administra
+toda tu logística desde una plataforma moderna
+y profesional.
 </p>
 
-<!-- PANEL -->
+<!-- BUSCADOR -->
 
-<div class="panel-rastreo">
-
-<div class="tabs">
-
-<div class="tab">
-<i class="fa-solid fa-calculator"></i>
-<h3>Tarifas</h3>
-</div>
-
-<div class="tab active">
-<i class="fa-solid fa-box"></i>
-<h3>Rastrea</h3>
-</div>
-
-<div class="tab">
-<i class="fa-solid fa-truck-fast"></i>
-<h3>Envía</h3>
-</div>
-
-</div>
-
-<div class="search-box">
+<div class="hero-search">
 
 <input type="text"
-placeholder="ID DE RASTREO">
+placeholder="Ingresa ID de rastreo">
 
 <button>
-TRACK →
+Rastrear
 </button>
 
 </div>
 
 </div>
 
-</div>
-
 </section>
 
-<!-- =========================
-GALERIA
-========================= -->
+<!-- DASHBOARD -->
 
-<section class="galeria">
+<section class="dashboard">
 
-<div class="galeria-card">
-
-<img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200">
-
-<div class="galeria-info">
-
-<h3>Rastreo Inteligente</h3>
-
-<p>
-Monitorea paquetes en tiempo real.
-</p>
-
-</div>
-
-</div>
-
-<div class="galeria-card">
-
-<img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f?q=80&w=1200">
-
-<div class="galeria-info">
-
-<h3>Entregas Seguras</h3>
-
-<p>
-Control total de distribución y rutas.
-</p>
-
-</div>
-
-</div>
-
-<div class="galeria-card">
-
-<img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1200">
-
-<div class="galeria-info">
-
-<h3>Control Logístico</h3>
-
-<p>
-Optimiza procesos y administra envíos.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-CONTENEDOR
-========================= -->
-
-<section class="contenedor">
-
-<!-- STATS -->
+<!-- ESTADISTICAS -->
 
 <div class="stats">
 
-<div class="stat-card">
+<div class="stat-card glass">
 
-<i class="fa-solid fa-box-open"></i>
+<i class="fa-solid fa-boxes-stacked"></i>
 
-<h3>Envíos Totales</h3>
+<h2>
 
 <?php
 $total = $conn->query("SELECT * FROM envios")->num_rows;
-echo "<h1>$total</h1>";
+echo $total;
 ?>
+
+</h2>
+
+<p>Envíos Totales</p>
 
 </div>
 
-<div class="stat-card">
+<div class="stat-card glass">
 
 <i class="fa-solid fa-truck"></i>
 
-<h3>En Camino</h3>
+<h2>
 
 <?php
 $camino = $conn->query("SELECT * FROM envios WHERE estado='En camino'")->num_rows;
-echo "<h1>$camino</h1>";
+echo $camino;
 ?>
+
+</h2>
+
+<p>En Camino</p>
 
 </div>
 
-<div class="stat-card">
+<div class="stat-card glass">
 
 <i class="fa-solid fa-circle-check"></i>
 
-<h3>Entregados</h3>
+<h2>
 
 <?php
 $entregados = $conn->query("SELECT * FROM envios WHERE estado='Entregado'")->num_rows;
-echo "<h1>$entregados</h1>";
+echo $entregados;
 ?>
+
+</h2>
+
+<p>Entregados</p>
 
 </div>
 
@@ -213,11 +120,11 @@ echo "<h1>$entregados</h1>";
 
 <!-- GRID -->
 
-<div class="grid">
+<div class="main-grid">
 
-<!-- FORMULARIO -->
+<!-- FORM -->
 
-<div class="card">
+<div class="form-card glass">
 
 <h2>
 <i class="fa-solid fa-paper-plane"></i>
@@ -226,49 +133,25 @@ Registrar Envío
 
 <form action="crear_envio.php" method="POST">
 
-<div class="input-group">
-
-<label>Remitente</label>
-
 <input type="text"
 name="remitente"
+placeholder="Remitente"
 required>
-
-</div>
-
-<div class="input-group">
-
-<label>Destinatario</label>
 
 <input type="text"
 name="destinatario"
+placeholder="Destinatario"
 required>
-
-</div>
-
-<div class="input-group">
-
-<label>Dirección</label>
 
 <input type="text"
 name="direccion"
+placeholder="Dirección"
 required>
-
-</div>
-
-<div class="input-group">
-
-<label>Ciudad</label>
 
 <input type="text"
 name="ciudad"
+placeholder="Ciudad"
 required>
-
-</div>
-
-<div class="input-group">
-
-<label>Estado</label>
 
 <select name="estado">
 
@@ -277,8 +160,6 @@ required>
 <option>Entregado</option>
 
 </select>
-
-</div>
 
 <button type="submit">
 Guardar Envío
@@ -290,9 +171,9 @@ Guardar Envío
 
 <!-- TABLA -->
 
-<div class="tabla-card">
+<div class="table-card glass">
 
-<div class="top-table">
+<div class="table-header">
 
 <h2>
 <i class="fa-solid fa-list"></i>
@@ -300,14 +181,13 @@ Lista de Envíos
 </h2>
 
 <input type="text"
-id="buscar"
 placeholder="Buscar envío...">
 
 </div>
 
 <div class="table-container">
 
-<table class="tabla-envios">
+<table>
 
 <thead>
 
@@ -317,7 +197,6 @@ placeholder="Buscar envío...">
 <th>Remitente</th>
 <th>Ciudad</th>
 <th>Estado</th>
-<th>Fecha</th>
 <th>Eliminar</th>
 
 </tr>
@@ -335,15 +214,15 @@ while($row = $result->fetch_assoc()){
 $estadoClass = "";
 
 if($row['estado']=="Pendiente"){
-    $estadoClass="pendiente";
+$estadoClass = "pendiente";
 }
 
 if($row['estado']=="En camino"){
-    $estadoClass="camino";
+$estadoClass = "camino";
 }
 
 if($row['estado']=="Entregado"){
-    $estadoClass="entregado";
+$estadoClass = "entregado";
 }
 
 echo "
@@ -357,16 +236,16 @@ echo "
 <td>{$row['ciudad']}</td>
 
 <td>
+
 <span class='estado $estadoClass'>
 {$row['estado']}
 </span>
-</td>
 
-<td>{$row['fecha']}</td>
+</td>
 
 <td>
 
-<a class='eliminar'
+<a class='delete-btn'
 href='eliminar_envio.php?id={$row['id']}'>
 
 <i class='fa-solid fa-trash'></i>
