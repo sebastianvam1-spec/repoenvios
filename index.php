@@ -1,5 +1,4 @@
 <?php include("conexion.php"); ?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,36 +7,86 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sistema de Envíos</title>
+<title>FastDelivery - Sistema de Envíos</title>
 
 <link rel="stylesheet" href="estilos.css">
+
+<!-- ICONOS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
 
-<header>
+<!-- NAVBAR -->
 
-<h1>📦 Sistema de Envíos</h1>
-<p>API Profesional de Gestión de Paquetes</p>
+<nav class="navbar">
 
-</header>
+<div class="logo">
+<i class="fa-solid fa-truck-fast"></i>
+FastDelivery
+</div>
+
+<ul>
+
+<li><a href="#">Inicio</a></li>
+<li><a href="#">Envíos</a></li>
+<li><a href="#">Rastreo</a></li>
+<li><a href="#">API</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Gestión Profesional de Envíos</h1>
+
+<p>
+Controla, registra y rastrea paquetes en tiempo real
+con una interfaz moderna y rápida.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTENIDO -->
 
 <section class="contenedor">
 
+<!-- FORMULARIO -->
+
 <div class="card">
 
-<h2>Registrar Envío</h2>
+<h2><i class="fa-solid fa-box"></i> Registrar Envío</h2>
 
 <form action="crear_envio.php" method="POST">
 
-<input type="text" name="remitente" placeholder="Remitente" required>
+<input type="text"
+name="remitente"
+placeholder="Nombre remitente"
+required>
 
-<input type="text" name="destinatario" placeholder="Destinatario" required>
+<input type="text"
+name="destinatario"
+placeholder="Nombre destinatario"
+required>
 
-<input type="text" name="direccion" placeholder="Dirección" required>
+<input type="text"
+name="direccion"
+placeholder="Dirección"
+required>
 
-<input type="text" name="ciudad" placeholder="Ciudad" required>
+<input type="text"
+name="ciudad"
+placeholder="Ciudad"
+required>
 
 <select name="estado">
 
@@ -47,27 +96,42 @@
 
 </select>
 
-<button type="submit">Guardar Envío</button>
+<button type="submit">
+
+<i class="fa-solid fa-paper-plane"></i>
+Guardar Envío
+
+</button>
 
 </form>
 
 </div>
 
+<!-- TABLA -->
+
 <div class="card">
 
-<h2>Lista de Envíos</h2>
+<div class="top-table">
 
-<input type="text" id="buscar" placeholder="Buscar envío...">
+<h2><i class="fa-solid fa-list"></i> Lista de Envíos</h2>
+
+<input type="text"
+id="buscar"
+placeholder="Buscar envío...">
+
+</div>
 
 <table>
 
 <tr>
+
 <th>Código</th>
 <th>Remitente</th>
 <th>Ciudad</th>
 <th>Estado</th>
 <th>Fecha</th>
-<th>Acción</th>
+<th>Eliminar</th>
+
 </tr>
 
 <?php
@@ -109,10 +173,14 @@ echo "
 <td>{$row['fecha']}</td>
 
 <td>
+
 <a class='eliminar'
 href='eliminar_envio.php?id={$row['id']}'>
-Eliminar
+
+<i class='fa-solid fa-trash'></i>
+
 </a>
+
 </td>
 
 </tr>

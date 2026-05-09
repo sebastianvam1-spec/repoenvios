@@ -1,6 +1,6 @@
 const buscador = document.getElementById("buscar");
 
-buscador.addEventListener("keyup", function(){
+buscador.addEventListener("keyup", () => {
 
 let filtro = buscador.value.toLowerCase();
 
@@ -12,7 +12,8 @@ if(index === 0) return;
 
 let texto = fila.innerText.toLowerCase();
 
-fila.style.display = texto.includes(filtro)
+fila.style.display =
+texto.includes(filtro)
 ? ""
 : "none";
 
