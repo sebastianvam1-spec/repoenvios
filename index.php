@@ -26,15 +26,14 @@ NAVBAR
 <nav class="navbar">
 
 <div class="logo">
-<i class="fa-solid fa-truck-fast"></i>
-FastDelivery
+Fed<span>Ex</span>
 </div>
 
 <ul>
-<li><a href="#">Inicio</a></li>
 <li><a href="#">Envíos</a></li>
 <li><a href="#">Rastreo</a></li>
-<li><a href="#">Dashboard</a></li>
+<li><a href="#">Ayuda</a></li>
+<li><a href="#">Cuenta</a></li>
 </ul>
 
 </nav>
@@ -45,73 +44,52 @@ HERO
 
 <section class="hero">
 
-<div class="overlay"></div>
-
 <div class="hero-content">
 
 <h1>
-Gestión Inteligente de
-<span>Envíos y Paquetes</span>
+Conectados con el mañana
 </h1>
 
 <p>
-Administra entregas, rastrea paquetes y controla
-envíos en tiempo real desde una plataforma moderna.
+Gestiona envíos, rastrea paquetes y administra
+toda tu logística desde una plataforma moderna,
+rápida y profesional.
 </p>
 
-<div class="hero-buttons">
+<!-- PANEL -->
 
-<a href="#panel" class="btn btn-primary">
+<div class="panel-rastreo">
+
+<div class="tabs">
+
+<div class="tab">
+<i class="fa-solid fa-calculator"></i>
+<h3>Tarifas</h3>
+</div>
+
+<div class="tab active">
 <i class="fa-solid fa-box"></i>
-Comenzar
-</a>
+<h3>Rastrea</h3>
+</div>
 
-<a href="listar_envios.php" class="btn btn-secondary">
-<i class="fa-solid fa-code"></i>
-Ver API
-</a>
-
+<div class="tab">
+<i class="fa-solid fa-truck-fast"></i>
+<h3>Envía</h3>
 </div>
 
 </div>
 
-</section>
+<div class="search-box">
 
-<!-- =========================
-SECCION IMAGENES
-========================= -->
+<input type="text"
+placeholder="ID DE RASTREO">
 
-<section class="galeria">
-
-<div class="galeria-card">
-
-<img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200">
-
-<div class="galeria-info">
-<h3>Rastreo en Tiempo Real</h3>
-<p>Visualiza el estado de tus paquetes instantáneamente.</p>
-</div>
+<button>
+TRACK →
+</button>
 
 </div>
 
-<div class="galeria-card">
-
-<img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f?q=80&w=1200">
-
-<div class="galeria-info">
-<h3>Entregas Seguras</h3>
-<p>Gestión avanzada y segura de envíos.</p>
-</div>
-
-</div>
-
-<div class="galeria-card">
-
-<img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1200">
-
-<div class="galeria-info">
-<h3>Control Logístico</h3>
-<p>Optimiza procesos de distribución y transporte.</p>
 </div>
 
 </div>
@@ -119,10 +97,10 @@ SECCION IMAGENES
 </section>
 
 <!-- =========================
-PANEL
+CONTENIDO
 ========================= -->
 
-<section class="contenedor" id="panel">
+<section class="contenedor">
 
 <!-- STATS -->
 
@@ -132,7 +110,6 @@ PANEL
 
 <i class="fa-solid fa-box-open"></i>
 
-<div>
 <h3>Envíos Totales</h3>
 
 <?php
@@ -142,13 +119,10 @@ echo "<h1>$total</h1>";
 
 </div>
 
-</div>
-
 <div class="stat-card">
 
 <i class="fa-solid fa-truck"></i>
 
-<div>
 <h3>En Camino</h3>
 
 <?php
@@ -158,13 +132,10 @@ echo "<h1>$camino</h1>";
 
 </div>
 
-</div>
-
 <div class="stat-card">
 
 <i class="fa-solid fa-circle-check"></i>
 
-<div>
 <h3>Entregados</h3>
 
 <?php
@@ -176,13 +147,11 @@ echo "<h1>$entregados</h1>";
 
 </div>
 
-</div>
-
 <!-- GRID -->
 
 <div class="grid">
 
-<!-- FORM -->
+<!-- FORMULARIO -->
 
 <div class="card">
 
@@ -194,26 +163,47 @@ Registrar Envío
 <form action="crear_envio.php" method="POST">
 
 <div class="input-group">
+
 <label>Remitente</label>
-<input type="text" name="remitente" required>
+
+<input type="text"
+name="remitente"
+required>
+
 </div>
 
 <div class="input-group">
+
 <label>Destinatario</label>
-<input type="text" name="destinatario" required>
+
+<input type="text"
+name="destinatario"
+required>
+
 </div>
 
 <div class="input-group">
+
 <label>Dirección</label>
-<input type="text" name="direccion" required>
+
+<input type="text"
+name="direccion"
+required>
+
 </div>
 
 <div class="input-group">
+
 <label>Ciudad</label>
-<input type="text" name="ciudad" required>
+
+<input type="text"
+name="ciudad"
+required>
+
 </div>
 
 <div class="input-group">
+
 <label>Estado</label>
 
 <select name="estado">
@@ -227,10 +217,7 @@ Registrar Envío
 </div>
 
 <button type="submit">
-
-<i class="fa-solid fa-floppy-disk"></i>
 Guardar Envío
-
 </button>
 
 </form>
@@ -335,8 +322,6 @@ href='eliminar_envio.php?id={$row['id']}'>
 </div>
 
 </section>
-
-<script src="script.js"></script>
 
 </body>
 </html>
