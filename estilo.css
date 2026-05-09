@@ -1,32 +1,435 @@
-/* =====================================
-LISTA DE ENVIOS MEJORADA
-===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-.top-table{
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f4f6fb;
+
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
 
     width:100%;
+    height:85px;
+
+    background:#4d148c;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    gap:20px;
+    padding:0 7%;
 
-    margin-bottom:30px;
+    position:fixed;
+    top:0;
+    z-index:1000;
 }
 
-.top-table h2{
+.logo{
+
+    font-size:40px;
+    font-weight:800;
+
+    color:white;
+}
+
+.logo span{
+    color:#ff6600;
+}
+
+.navbar ul{
+
+    display:flex;
+    gap:35px;
+
+    list-style:none;
+}
+
+.navbar ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+
+    width:100%;
+    min-height:750px;
+
+    background:
+    linear-gradient(rgba(77,20,140,.75),
+    rgba(77,20,140,.75)),
+    url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1800');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:140px 20px 80px;
+
+    position:relative;
+}
+
+.hero-content{
+
+    width:100%;
+    max-width:1100px;
+
+    margin:auto;
+
+    z-index:2;
+}
+
+.hero h1{
+
+    font-size:75px;
+
+    color:white;
+
+    margin-bottom:25px;
+}
+
+.hero p{
+
+    color:white;
+
+    font-size:22px;
+
+    max-width:850px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    margin-bottom:50px;
+}
+
+/* PANEL */
+
+.panel-rastreo{
+
+    width:100%;
+    max-width:950px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+}
+
+.tabs{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+}
+
+.tab{
+
+    padding:35px 20px;
+
+    text-align:center;
+}
+
+.tab.active{
+
+    background:#4d148c;
+
+    color:white;
+}
+
+.tab i{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+}
+
+.search-box{
+
+    display:flex;
+}
+
+.search-box input{
 
     flex:1;
 
-    text-align:left;
+    padding:24px;
+
+    border:none;
+
+    background:#f3f3f3;
+
+    font-size:20px;
+}
+
+.search-box button{
+
+    width:220px;
+
+    border:none;
+
+    background:#ff6600;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:700;
+}
+
+/* GALERIA */
+
+.galeria{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:80px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+}
+
+.galeria-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.galeria-card:hover{
+
+    transform:translateY(-10px);
+}
+
+.galeria-card img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+}
+
+.galeria-info{
+
+    padding:30px;
+
+    text-align:center;
+}
+
+.galeria-info h3{
 
     color:#4d148c;
+
+    margin-bottom:15px;
+
+    font-size:28px;
+}
+
+.galeria-info p{
+
+    color:#666;
+
+    line-height:1.7;
+}
+
+/* CONTENEDOR */
+
+.contenedor{
+
+    width:90%;
+
+    max-width:1450px;
+
+    margin:auto;
+}
+
+/* STATS */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-bottom:50px;
+}
+
+.stat-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.stat-card i{
+
+    font-size:40px;
+
+    color:#4d148c;
+
+    margin-bottom:20px;
+}
+
+.stat-card h3{
+
+    color:#666;
+
+    margin-bottom:15px;
+}
+
+.stat-card h1{
+
+    font-size:50px;
+
+    color:#222;
+}
+
+/* GRID */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:380px 1fr;
+
+    gap:30px;
+
+    margin-bottom:80px;
+}
+
+/* CARD */
+
+.card,
+.tabla-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.card h2,
+.top-table h2{
+
+    color:#4d148c;
+
+    margin-bottom:30px;
 
     font-size:30px;
 }
 
-/* BUSCADOR */
+/* FORMULARIOS */
+
+.input-group{
+
+    margin-bottom:20px;
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#555;
+}
+
+input,
+select{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#f3f3f3;
+
+    outline:none;
+}
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#ff6600;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+/* TABLA */
+
+.top-table{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:30px;
+}
 
 #buscar{
 
@@ -39,101 +442,49 @@ LISTA DE ENVIOS MEJORADA
     border-radius:14px;
 
     background:#f3f4f6;
-
-    outline:none;
-
-    font-size:15px;
-
-    transition:.3s;
 }
-
-#buscar:focus{
-
-    background:white;
-
-    border:2px solid #4d148c;
-
-    box-shadow:0 0 15px rgba(77,20,140,.15);
-}
-
-/* CONTENEDOR TABLA */
 
 .table-container{
 
-    width:100%;
-
     overflow-x:auto;
-
-    border-radius:20px;
-
-    background:white;
 }
 
-/* TABLA */
-
-table{
+.tabla-envios{
 
     width:100%;
 
     border-collapse:collapse;
-
-    overflow:hidden;
-
-    border-radius:20px;
 }
 
-/* HEADERS */
-
-table th{
+.tabla-envios thead{
 
     background:#4d148c;
+}
+
+.tabla-envios th{
 
     color:white;
 
-    padding:22px;
+    padding:20px;
+
+    text-align:center;
+}
+
+.tabla-envios td{
+
+    padding:20px;
 
     text-align:center;
 
-    font-size:15px;
-    font-weight:600;
-
-    letter-spacing:.5px;
+    border-bottom:1px solid #eee;
 }
 
-/* CELDAS */
-
-table td{
-
-    padding:22px 15px;
-
-    text-align:center;
-
-    vertical-align:middle;
-
-    color:#444;
-
-    font-size:15px;
-
-    border-bottom:1px solid #f1f1f1;
-}
-
-/* HOVER */
-
-table tr{
-
-    transition:.3s;
-}
-
-table tr:hover{
+.tabla-envios tbody tr:hover{
 
     background:#faf7ff;
-
-    transform:scale(1.002);
 }
 
-/* CODIGO */
-
-table td:first-child{
+.codigo{
 
     font-weight:700;
 
@@ -144,22 +495,14 @@ table td:first-child{
 
 .estado{
 
-    display:inline-flex;
-
-    justify-content:center;
-    align-items:center;
-
-    min-width:120px;
-
     padding:10px 18px;
 
-    border-radius:50px;
+    border-radius:30px;
 
     font-size:13px;
+
     font-weight:700;
 }
-
-/* PENDIENTE */
 
 .pendiente{
 
@@ -168,16 +511,12 @@ table td:first-child{
     color:#856404;
 }
 
-/* EN CAMINO */
-
 .camino{
 
     background:#dbeafe;
 
     color:#1d4ed8;
 }
-
-/* ENTREGADO */
 
 .entregado{
 
@@ -186,12 +525,12 @@ table td:first-child{
     color:#15803d;
 }
 
-/* BOTON ELIMINAR */
+/* ELIMINAR */
 
 .eliminar{
 
-    width:45px;
-    height:45px;
+    width:42px;
+    height:42px;
 
     margin:auto;
 
@@ -206,57 +545,72 @@ table td:first-child{
     color:#dc2626;
 
     text-decoration:none;
-
-    transition:.3s;
-}
-
-.eliminar:hover{
-
-    background:#dc2626;
-
-    color:white;
-
-    transform:scale(1.08);
-}
-
-/* CARD TABLA */
-
-.card:last-child{
-
-    width:100%;
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
 }
 
 /* RESPONSIVE */
 
-@media(max-width:900px){
+@media(max-width:1100px){
+
+.stats{
+    grid-template-columns:1fr;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.galeria{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.tabs{
+    grid-template-columns:1fr;
+}
+
+.search-box{
+    flex-direction:column;
+}
+
+.search-box button{
+    width:100%;
+    height:80px;
+}
+
+.navbar{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:20px;
+}
+
+.navbar ul{
+
+    margin-top:15px;
+}
 
 .top-table{
 
     flex-direction:column;
 
-    justify-content:center;
-    align-items:center;
-}
-
-.top-table h2{
-
-    text-align:center;
+    gap:20px;
 }
 
 #buscar{
-
     width:100%;
-}
-
-table{
-
-    min-width:750px;
 }
 
 }

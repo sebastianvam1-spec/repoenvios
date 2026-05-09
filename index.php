@@ -10,10 +10,16 @@
 
 <title>FastDelivery PRO</title>
 
+<!-- CSS -->
 <link rel="stylesheet" href="estilos.css">
 
+<!-- ICONOS -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- FUENTE -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 </head>
 
@@ -44,7 +50,7 @@ HERO
 
 <section class="hero">
 
-<div class="hero-overlay"></div>
+<div class="overlay"></div>
 
 <div class="hero-content">
 
@@ -53,12 +59,12 @@ Conectados con el mañana
 </h1>
 
 <p>
-Gestiona envíos, rastrea paquetes y controla toda
-tu logística desde una plataforma moderna,
+Gestiona envíos, rastrea paquetes y administra
+toda tu logística desde una plataforma moderna,
 rápida y profesional.
 </p>
 
-<!-- PANEL CENTRAL -->
+<!-- PANEL -->
 
 <div class="panel-rastreo">
 
@@ -113,8 +119,7 @@ GALERIA
 <h3>Rastreo Inteligente</h3>
 
 <p>
-Monitorea el estado de todos tus paquetes
-en tiempo real.
+Monitorea paquetes en tiempo real.
 </p>
 
 </div>
@@ -130,8 +135,7 @@ en tiempo real.
 <h3>Entregas Seguras</h3>
 
 <p>
-Optimiza tus entregas y controla rutas
-de distribución.
+Control total de distribución y rutas.
 </p>
 
 </div>
@@ -147,8 +151,7 @@ de distribución.
 <h3>Control Logístico</h3>
 
 <p>
-Administra envíos desde una plataforma
-rápida y moderna.
+Optimiza procesos y administra envíos.
 </p>
 
 </div>
@@ -158,7 +161,7 @@ rápida y moderna.
 </section>
 
 <!-- =========================
-CONTENIDO
+CONTENEDOR
 ========================= -->
 
 <section class="contenedor">
@@ -212,7 +215,7 @@ echo "<h1>$entregados</h1>";
 
 <div class="grid">
 
-<!-- FORM -->
+<!-- FORMULARIO -->
 
 <div class="card">
 
@@ -287,7 +290,7 @@ Guardar Envío
 
 <!-- TABLA -->
 
-<div class="card">
+<div class="tabla-card">
 
 <div class="top-table">
 
@@ -304,7 +307,9 @@ placeholder="Buscar envío...">
 
 <div class="table-container">
 
-<table>
+<table class="tabla-envios">
+
+<thead>
 
 <tr>
 
@@ -316,6 +321,10 @@ placeholder="Buscar envío...">
 <th>Eliminar</th>
 
 </tr>
+
+</thead>
+
+<tbody>
 
 <?php
 
@@ -341,7 +350,7 @@ echo "
 
 <tr>
 
-<td>{$row['codigo']}</td>
+<td class='codigo'>{$row['codigo']}</td>
 
 <td>{$row['remitente']}</td>
 
@@ -373,6 +382,8 @@ href='eliminar_envio.php?id={$row['id']}'>
 }
 
 ?>
+
+</tbody>
 
 </table>
 
