@@ -10,7 +10,7 @@
 
 <title>FastDelivery Ultra</title>
 
-<link rel="stylesheet" href="estilos.css?v=10">
+<link rel="stylesheet" href="estilos.css?v=20">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -40,8 +40,6 @@ toda tu logística desde una plataforma moderna
 y profesional.
 </p>
 
-<!-- BUSCADOR -->
-
 <div class="hero-search">
 
 <input type="text"
@@ -57,11 +55,65 @@ Rastrear
 
 </section>
 
+<!-- GALERIA -->
+
+<section class="galeria-envios">
+
+<div class="envio-card">
+
+<img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f?q=80&w=1200">
+
+<div class="envio-info">
+
+<h3>Entregas Inteligentes</h3>
+
+<p>
+Control total de paquetes y distribución.
+</p>
+
+</div>
+
+</div>
+
+<div class="envio-card">
+
+<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200">
+
+<div class="envio-info">
+
+<h3>Logística Moderna</h3>
+
+<p>
+Administra envíos desde cualquier lugar.
+</p>
+
+</div>
+
+</div>
+
+<div class="envio-card">
+
+<img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1200">
+
+<div class="envio-info">
+
+<h3>Rastreo en Tiempo Real</h3>
+
+<p>
+Monitorea entregas con precisión.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- DASHBOARD -->
 
 <section class="dashboard">
 
-<!-- ESTADISTICAS -->
+<!-- STATS -->
 
 <div class="stats">
 
@@ -195,6 +247,7 @@ placeholder="Buscar envío...">
 
 <th>Código</th>
 <th>Remitente</th>
+<th>Destinatario</th>
 <th>Ciudad</th>
 <th>Estado</th>
 <th>Eliminar</th>
@@ -232,6 +285,8 @@ echo "
 <td class='codigo'>{$row['codigo']}</td>
 
 <td>{$row['remitente']}</td>
+
+<td>{$row['destinatario']}</td>
 
 <td>{$row['ciudad']}</td>
 
