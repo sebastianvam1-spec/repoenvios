@@ -1,414 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* =====================================
+LISTA DE ENVIOS MEJORADA
+===================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-
-    font-family:'Poppins',sans-serif;
-
-    background:
-    linear-gradient(
-    135deg,
-    #f3f0ff,
-    #ede9fe,
-    #f8fafc
-    );
-
-    overflow-x:hidden;
-}
-
-/* =========================
-NAVBAR
-========================= */
-
-.navbar{
+.top-table{
 
     width:100%;
-    height:85px;
-
-    background:#4d148c;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    padding:0 7%;
+    gap:20px;
 
-    position:fixed;
-    top:0;
-    z-index:1000;
+    margin-bottom:30px;
 }
 
-.logo{
-
-    font-size:38px;
-    font-weight:800;
-    color:white;
-}
-
-.logo span{
-    color:#ff6600;
-}
-
-.navbar ul{
-
-    display:flex;
-    gap:35px;
-
-    list-style:none;
-}
-
-.navbar ul li a{
-
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-}
-
-/* =========================
-HERO
-========================= */
-
-.hero{
-
-    width:100%;
-    min-height:750px;
-
-    background:
-    linear-gradient(rgba(77,20,140,.75),
-    rgba(77,20,140,.75)),
-    url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1800');
-
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    padding:120px 20px 60px;
-}
-
-.hero-content{
-
-    width:100%;
-    max-width:1100px;
-
-    margin:auto;
-}
-
-.hero h1{
-
-    font-size:75px;
-    color:white;
-
-    margin-bottom:25px;
-}
-
-.hero p{
-
-    font-size:22px;
-
-    color:white;
-
-    max-width:850px;
-
-    margin:auto;
-    margin-bottom:50px;
-
-    line-height:1.8;
-}
-
-/* =========================
-PANEL
-========================= */
-
-.panel-rastreo{
-
-    width:100%;
-    max-width:950px;
-
-    margin:auto;
-
-    background:white;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.2);
-}
-
-/* =========================
-TABS
-========================= */
-
-.tabs{
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-}
-
-.tab{
-
-    padding:35px 20px;
-
-    text-align:center;
-
-    background:white;
-}
-
-.tab.active{
-
-    background:#4d148c;
-    color:white;
-}
-
-.tab i{
-
-    font-size:40px;
-    margin-bottom:15px;
-}
-
-/* =========================
-SEARCH
-========================= */
-
-.search-box{
-
-    display:flex;
-}
-
-.search-box input{
+.top-table h2{
 
     flex:1;
 
-    padding:25px;
-
-    border:none;
-
-    background:#f3f3f3;
-
-    font-size:20px;
-}
-
-.search-box button{
-
-    width:220px;
-
-    border:none;
-
-    background:#ff6600;
-
-    color:white;
-
-    font-size:20px;
-    font-weight:700;
-}
-
-/* =========================
-CONTENEDOR GENERAL
-========================= */
-
-.contenedor{
-
-    width:90%;
-    max-width:1400px;
-
-    margin:auto;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-/* =========================
-STATS
-========================= */
-
-.stats{
-
-    width:100%;
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-
-    gap:25px;
-
-    margin-top:70px;
-    margin-bottom:40px;
-}
-
-.stat-card{
-
-    background:white;
-
-    border-radius:22px;
-
-    padding:35px;
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.stat-card i{
-
-    width:80px;
-    height:80px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    border-radius:18px;
-
-    background:#f3e8ff;
+    text-align:left;
 
     color:#4d148c;
 
-    font-size:32px;
-
-    margin-bottom:20px;
+    font-size:30px;
 }
 
-.stat-card h3{
+/* BUSCADOR */
 
-    color:#666;
-    margin-bottom:10px;
-}
+#buscar{
 
-.stat-card h1{
+    width:320px;
 
-    font-size:45px;
-    color:#222;
-}
-
-/* =========================
-GRID
-========================= */
-
-.grid{
-
-    width:100%;
-
-    display:grid;
-
-    grid-template-columns:380px 1fr;
-
-    gap:30px;
-
-    margin-bottom:80px;
-}
-
-/* =========================
-CARD
-========================= */
-
-.card{
-
-    background:white;
-
-    border-radius:22px;
-
-    padding:35px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.card h2{
-
-    text-align:center;
-
-    margin-bottom:30px;
-
-    color:#4d148c;
-}
-
-/* =========================
-FORMULARIOS
-========================= */
-
-.input-group{
-
-    margin-bottom:18px;
-}
-
-.input-group label{
-
-    display:block;
-
-    margin-bottom:8px;
-
-    color:#555;
-}
-
-input,
-select{
-
-    width:100%;
-
-    padding:16px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#f3f3f3;
-
-    outline:none;
-}
-
-button{
-
-    width:100%;
-
-    padding:18px;
+    padding:16px 20px;
 
     border:none;
 
     border-radius:14px;
 
-    background:#ff6600;
+    background:#f3f4f6;
 
-    color:white;
+    outline:none;
 
-    font-size:17px;
-    font-weight:700;
+    font-size:15px;
 
-    cursor:pointer;
+    transition:.3s;
 }
 
-/* =========================
-TABLA
-========================= */
+#buscar:focus{
 
-.top-table{
+    background:white;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    border:2px solid #4d148c;
 
-    margin-bottom:25px;
+    box-shadow:0 0 15px rgba(77,20,140,.15);
 }
+
+/* CONTENEDOR TABLA */
 
 .table-container{
 
+    width:100%;
+
     overflow-x:auto;
+
+    border-radius:20px;
+
+    background:white;
 }
+
+/* TABLA */
 
 table{
 
@@ -416,8 +77,12 @@ table{
 
     border-collapse:collapse;
 
-    text-align:center;
+    overflow:hidden;
+
+    border-radius:20px;
 }
+
+/* HEADERS */
 
 table th{
 
@@ -425,67 +90,173 @@ table th{
 
     color:white;
 
-    padding:18px;
+    padding:22px;
+
+    text-align:center;
+
+    font-size:15px;
+    font-weight:600;
+
+    letter-spacing:.5px;
 }
+
+/* CELDAS */
 
 table td{
 
-    padding:18px;
+    padding:22px 15px;
 
-    border-bottom:1px solid #eee;
+    text-align:center;
+
+    vertical-align:middle;
+
+    color:#444;
+
+    font-size:15px;
+
+    border-bottom:1px solid #f1f1f1;
 }
 
-/* =========================
-RESPONSIVE
-========================= */
+/* HOVER */
 
-@media(max-width:1100px){
+table tr{
 
-.stats{
-    grid-template-columns:1fr;
+    transition:.3s;
 }
 
-.grid{
-    grid-template-columns:1fr;
+table tr:hover{
+
+    background:#faf7ff;
+
+    transform:scale(1.002);
 }
 
+/* CODIGO */
+
+table td:first-child{
+
+    font-weight:700;
+
+    color:#4d148c;
 }
 
-@media(max-width:768px){
+/* ESTADOS */
 
-.hero h1{
-    font-size:45px;
+.estado{
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    min-width:120px;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    font-size:13px;
+    font-weight:700;
 }
 
-.hero p{
-    font-size:17px;
+/* PENDIENTE */
+
+.pendiente{
+
+    background:#fff3cd;
+
+    color:#856404;
 }
 
-.tabs{
-    grid-template-columns:1fr;
+/* EN CAMINO */
+
+.camino{
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
 }
 
-.search-box{
-    flex-direction:column;
+/* ENTREGADO */
+
+.entregado{
+
+    background:#dcfce7;
+
+    color:#15803d;
 }
 
-.search-box button{
+/* BOTON ELIMINAR */
+
+.eliminar{
+
+    width:45px;
+    height:45px;
+
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:12px;
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.eliminar:hover{
+
+    background:#dc2626;
+
+    color:white;
+
+    transform:scale(1.08);
+}
+
+/* CARD TABLA */
+
+.card:last-child{
+
     width:100%;
-    height:80px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
 }
 
-.navbar{
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.top-table{
 
     flex-direction:column;
 
-    height:auto;
-
-    padding:20px;
+    justify-content:center;
+    align-items:center;
 }
 
-.navbar ul{
+.top-table h2{
 
-    margin-top:15px;
+    text-align:center;
+}
+
+#buscar{
+
+    width:100%;
+}
+
+table{
+
+    min-width:750px;
 }
 
 }
