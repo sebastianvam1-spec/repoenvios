@@ -96,6 +96,9 @@ width:100%;
 max-width:750px;
 
 margin:auto;
+}
+
+.hero-search form{
 
 display:flex;
 
@@ -137,6 +140,104 @@ font-weight:700;
 cursor:pointer;
 }
 
+/* RASTREO */
+
+.rastreo-box{
+
+width:90%;
+max-width:1300px;
+
+margin:auto;
+margin-top:40px;
+margin-bottom:40px;
+
+padding:40px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.rastreo-box h2{
+
+font-size:38px;
+
+margin-bottom:35px;
+
+text-align:center;
+}
+
+.rastreo-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+}
+
+.rastreo-item{
+
+background:rgba(255,255,255,.05);
+
+padding:25px;
+
+border-radius:20px;
+
+text-align:center;
+}
+
+.rastreo-item h3{
+
+margin-bottom:12px;
+
+color:#f97316;
+}
+
+.rastreo-item p{
+
+font-size:18px;
+}
+
+.estado-rastreo{
+
+display:inline-block;
+
+padding:12px 22px;
+
+border-radius:30px;
+
+background:#22c55e;
+
+font-weight:700;
+}
+
+.rastreo-error{
+
+width:90%;
+max-width:700px;
+
+margin:auto;
+margin-top:40px;
+
+padding:30px;
+
+border-radius:20px;
+
+background:#ef4444;
+
+text-align:center;
+
+font-size:24px;
+font-weight:700;
+}
+
 /* GALERIA */
 
 .galeria-envios{
@@ -145,11 +246,7 @@ width:90%;
 max-width:1450px;
 
 margin:auto;
-margin-top:-90px;
 margin-bottom:60px;
-
-position:relative;
-z-index:10;
 
 display:grid;
 
@@ -362,32 +459,6 @@ cursor:pointer;
 
 /* TABLA */
 
-.table-header{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-margin-bottom:30px;
-}
-
-.table-header input{
-
-width:300px;
-
-padding:16px;
-
-border:none;
-
-border-radius:16px;
-
-background:rgba(255,255,255,.08);
-
-color:white;
-
-outline:none;
-}
-
 .table-container{
 
 overflow-x:auto;
@@ -432,8 +503,6 @@ font-weight:700;
 color:#f97316;
 }
 
-/* ESTADOS */
-
 .estado{
 
 padding:10px 18px;
@@ -460,8 +529,6 @@ background:#3b82f6;
 
 background:#22c55e;
 }
-
-/* ELIMINAR */
 
 .delete-btn{
 
@@ -499,6 +566,10 @@ grid-template-columns:1fr;
 grid-template-columns:1fr;
 }
 
+.rastreo-grid{
+grid-template-columns:1fr;
+}
+
 }
 
 @media(max-width:768px){
@@ -511,24 +582,13 @@ font-size:48px;
 font-size:18px;
 }
 
-.hero-search{
+.hero-search form{
 flex-direction:column;
 }
 
 .hero-search button{
 width:100%;
 height:70px;
-}
-
-.table-header{
-
-flex-direction:column;
-
-gap:20px;
-}
-
-.table-header input{
-width:100%;
 }
 
 }

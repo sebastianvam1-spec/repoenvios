@@ -10,7 +10,7 @@
 
 <title>FastDelivery Ultra</title>
 
-<link rel="stylesheet" href="estilos.css?v=20">
+<link rel="stylesheet" href="estilos.css?v=50">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -40,20 +40,116 @@ toda tu logística desde una plataforma moderna
 y profesional.
 </p>
 
+<!-- BUSCADOR -->
+
 <div class="hero-search">
 
-<input type="text"
-placeholder="Ingresa ID de rastreo">
+<form action="index.php" method="GET">
 
-<button>
+<input type="text"
+name="buscar_codigo"
+placeholder="Ingresa ID de rastreo"
+required>
+
+<button type="submit">
 Rastrear
 </button>
+
+</form>
 
 </div>
 
 </div>
 
 </section>
+
+<!-- RASTREO -->
+
+<?php
+
+if(isset($_GET['buscar_codigo'])){
+
+$codigoBuscar = $_GET['buscar_codigo'];
+
+$consulta = $conn->query("
+SELECT * FROM envios
+WHERE codigo='$codigoBuscar'
+");
+
+if($consulta->num_rows > 0){
+
+$row = $consulta->fetch_assoc();
+
+echo "
+
+<div class='rastreo-box'>
+
+<h2>
+<i class='fa-solid fa-location-dot'></i>
+Resultado del Rastreo
+</h2>
+
+<div class='rastreo-grid'>
+
+<div class='rastreo-item'>
+<h3>Código</h3>
+<p>{$row['codigo']}</p>
+</div>
+
+<div class='rastreo-item'>
+<h3>Remitente</h3>
+<p>{$row['remitente']}</p>
+</div>
+
+<div class='rastreo-item'>
+<h3>Destinatario</h3>
+<p>{$row['destinatario']}</p>
+</div>
+
+<div class='rastreo-item'>
+<h3>Ciudad</h3>
+<p>{$row['ciudad']}</p>
+</div>
+
+<div class='rastreo-item'>
+<h3>Dirección</h3>
+<p>{$row['direccion']}</p>
+</div>
+
+<div class='rastreo-item'>
+<h3>Estado</h3>
+
+<span class='estado-rastreo'>
+{$row['estado']}
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+";
+
+}else{
+
+echo "
+
+<div class='rastreo-error'>
+
+<i class='fa-solid fa-circle-xmark'></i>
+
+No se encontró el envío
+
+</div>
+
+";
+
+}
+
+}
+
+?>
 
 <!-- GALERIA -->
 
@@ -231,9 +327,6 @@ Guardar Envío
 <i class="fa-solid fa-list"></i>
 Lista de Envíos
 </h2>
-
-<input type="text"
-placeholder="Buscar envío...">
 
 </div>
 
