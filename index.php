@@ -44,6 +44,8 @@ HERO
 
 <section class="hero">
 
+<div class="hero-overlay"></div>
+
 <div class="hero-content">
 
 <h1>
@@ -51,12 +53,12 @@ Conectados con el mañana
 </h1>
 
 <p>
-Gestiona envíos, rastrea paquetes y administra
-toda tu logística desde una plataforma moderna,
+Gestiona envíos, rastrea paquetes y controla toda
+tu logística desde una plataforma moderna,
 rápida y profesional.
 </p>
 
-<!-- PANEL -->
+<!-- PANEL CENTRAL -->
 
 <div class="panel-rastreo">
 
@@ -89,6 +91,65 @@ TRACK →
 </button>
 
 </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+GALERIA
+========================= -->
+
+<section class="galeria">
+
+<div class="galeria-card">
+
+<img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200">
+
+<div class="galeria-info">
+
+<h3>Rastreo Inteligente</h3>
+
+<p>
+Monitorea el estado de todos tus paquetes
+en tiempo real.
+</p>
+
+</div>
+
+</div>
+
+<div class="galeria-card">
+
+<img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f?q=80&w=1200">
+
+<div class="galeria-info">
+
+<h3>Entregas Seguras</h3>
+
+<p>
+Optimiza tus entregas y controla rutas
+de distribución.
+</p>
+
+</div>
+
+</div>
+
+<div class="galeria-card">
+
+<img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1200">
+
+<div class="galeria-info">
+
+<h3>Control Logístico</h3>
+
+<p>
+Administra envíos desde una plataforma
+rápida y moderna.
+</p>
 
 </div>
 
@@ -151,7 +212,7 @@ echo "<h1>$entregados</h1>";
 
 <div class="grid">
 
-<!-- FORMULARIO -->
+<!-- FORM -->
 
 <div class="card">
 
