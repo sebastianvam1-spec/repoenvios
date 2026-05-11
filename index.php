@@ -10,7 +10,7 @@
 
 <title>FastDelivery Ultra</title>
 
-<link rel="stylesheet" href="estilos.css?v=50">
+<link rel="stylesheet" href="estilos.css?v=100">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -36,11 +36,8 @@ Sistema Inteligente de Envíos
 
 <p>
 Gestiona paquetes, controla entregas y administra
-toda tu logística desde una plataforma moderna
-y profesional.
+toda tu logística desde una plataforma moderna.
 </p>
-
-<!-- BUSCADOR -->
 
 <div class="hero-search">
 
@@ -85,7 +82,6 @@ echo "
 <div class='rastreo-box'>
 
 <h2>
-<i class='fa-solid fa-location-dot'></i>
 Resultado del Rastreo
 </h2>
 
@@ -118,11 +114,9 @@ Resultado del Rastreo
 
 <div class='rastreo-item'>
 <h3>Estado</h3>
-
 <span class='estado-rastreo'>
 {$row['estado']}
 </span>
-
 </div>
 
 </div>
@@ -136,11 +130,7 @@ Resultado del Rastreo
 echo "
 
 <div class='rastreo-error'>
-
-<i class='fa-solid fa-circle-xmark'></i>
-
 No se encontró el envío
-
 </div>
 
 ";
@@ -275,7 +265,6 @@ echo $entregados;
 <div class="form-card glass">
 
 <h2>
-<i class="fa-solid fa-paper-plane"></i>
 Registrar Envío
 </h2>
 
@@ -321,14 +310,9 @@ Guardar Envío
 
 <div class="table-card glass">
 
-<div class="table-header">
-
 <h2>
-<i class="fa-solid fa-list"></i>
 Lista de Envíos
 </h2>
-
-</div>
 
 <div class="table-container">
 
@@ -343,6 +327,7 @@ Lista de Envíos
 <th>Destinatario</th>
 <th>Ciudad</th>
 <th>Estado</th>
+<th>Editar</th>
 <th>Eliminar</th>
 
 </tr>
@@ -388,6 +373,17 @@ echo "
 <span class='estado $estadoClass'>
 {$row['estado']}
 </span>
+
+</td>
+
+<td>
+
+<a class='edit-btn'
+href='editar_envio.php?id={$row['id']}'>
+
+<i class='fa-solid fa-pen'></i>
+
+</a>
 
 </td>
 
