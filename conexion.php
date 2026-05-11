@@ -1,9 +1,9 @@
 <?php
 
-$host = "mysql-claseapi.alwaysdata.net";
-$user = "claseapi";
+$host = "mysql-stiven.alwaysdata.net";
+$user = "stiven";
 $pass = "clase1234";
-$db   = "claseapi_gestionusuarios";
+$db   = "stiven_gestionusuarios";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
