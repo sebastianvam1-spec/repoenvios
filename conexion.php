@@ -1,6 +1,6 @@
 <?php
 
-$host = "ftp-clasebraian.alwaysdata.net";
+$host = "mysql-clasebraian.alwaysdata.net";
 $user = "clasebraian";
 $pass = "BRAIAN123";
 $db   = "clasebraian_gestionusuarios";
