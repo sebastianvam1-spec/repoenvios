@@ -31,7 +31,7 @@ rel="stylesheet">
 <div class="hero-content">
 
 <h1>
-Sistema Inteligente de Envíos
+Sistema Inteligente de Envíos STIFLEN
 </h1>
 
 <p>
