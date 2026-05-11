@@ -15,9 +15,9 @@ jobs:
       - name: 📂 Sincronizando archivos via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp-claseapi.alwaysdata.net # Change if using another host
-          username: claseapi
-          password: clase1234
+          server: ftp-clasebraian.alwaysdata.net # Change if using another host
+          username: clasebraian
+          password: BRAIAN123
           server-dir: www/ # Replace with your correct path
           protocol: ftps
           timeout: 86400000
