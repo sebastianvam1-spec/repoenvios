@@ -36,7 +36,8 @@ Sistema Inteligente de Envíos
 
 <p>
 Gestiona paquetes, controla entregas y administra
-toda tu logística desde una plataforma moderna.
+toda tu logística desde una plataforma moderna VELEZ
+.
 </p>
 
 <div class="hero-search">
